@@ -1,0 +1,4 @@
+include ':redsocial-debug'
+include ':redsocial'
+include ':app'
+rootProject.name = "zRedSocial"

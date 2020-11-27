@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'google-services'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "dev.norman.zredsocial"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    implementation project (':redsocial')
+
+    //GSON
+    implementation "com.google.code.gson:gson:$gson"
+
+    //Dagger
+    implementation "com.google.dagger:dagger:$dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit2"
+
+    //RX Java
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor"
+
+    // Map
+    implementation "commons-codec:commons-codec:$commons_codec"
+    implementation "com.google.android.gms:play-services-maps:$play_services"
+    implementation "com.google.android.gms:play-services-location:$play_services"
+    implementation "com.google.maps.android:android-maps-utils:$maps_utils"
+
+
+    // Firebase Config
+    implementation 'com.google.firebase:firebase-config:20.0.1'
+
+    implementation "com.github.bumptech.glide:glide:$glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide"
+
+    implementation "io.fotoapparat:fotoapparat:$fapp"
+    implementation "id.zelory:compressor:$compresor"
+
+    // Firebase
+    implementation "com.google.firebase:firebase-core:$fire_core"
+    implementation "com.google.firebase:firebase-firestore:$storage_fire"
+    implementation "com.google.firebase:firebase-storage:$firebase_storage"
+    //implementation "com.google.firebase:firebase-messaging:$firebase_messaging"
+
+    // ShimmerLayout
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    implementation "com.google.android.libraries.places:places:$google_places"
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.10"
+
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
